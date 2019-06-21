@@ -145,6 +145,7 @@ class Point(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        self.move = 0
 
 
 def run_test_repr():
