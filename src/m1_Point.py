@@ -194,7 +194,7 @@ def run_test_repr():
         print('Actual for p2:  ', p2)
     """
     # ------------------------------------------------------------------
-    # TODO: 4.  Follow the same instructions as in TO-DO 3 above,
+    # DONE: 4.  Follow the same instructions as in TO-DO 3 above,
     #           but for the  __repr__  method specified above.
     # ------------------------------------------------------------------
     p1 = Point(30, 18)
