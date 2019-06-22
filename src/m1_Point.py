@@ -981,7 +981,6 @@ def run_test_closer_to():
     print('Actual:  ', p1.closer_to(p4, p5) is p5)
 
 
-
 def run_test_halfway_to():
     """
     Tests the   halfway_to   method of the Point class.
