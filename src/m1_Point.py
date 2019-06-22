@@ -141,18 +141,6 @@ def run_test_init():
     print('Actual for p2:  ', p2.x, p2.y)
 
 
-class Point(object):
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def __repr__(self):
-        x1 = str(self.x)
-        y1 = str(self.y)
-
-        return 'Point(' + x1 + ', ' + y1 + ')'
-
-
 def run_test_repr():
     """
     Tests the   __repr__   method of the Point class.
@@ -320,6 +308,25 @@ def run_test_clone():
     print('Expected for p3: Point(777, 555)')
     print('Actual for p3:  ', p3)
 
+
+class Point(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        x1 = str(self.x)
+        y1 = str(self.y)
+
+        return 'Point(' + x1 + ', ' + y1 + ')'
+
+    def clone(self):
+        x2 = self.x
+        y2 = self.y
+        p = Point(x2, y2)
+        return p
+
+    
 
 def run_test_move_to():
     """
