@@ -141,6 +141,16 @@ def run_test_init():
     print('-----------------------------------------------------------')
 
 
+class Point(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __repr__(self):
+        x = self.x
+        y = self.y
+        point = Point(x, y)
+        print(x, y)
 
 def run_test_repr():
     """
@@ -209,18 +219,6 @@ def run_test_repr():
     print('-----------------------------------------------------------')
     print('Testing the   __repr__   method of the Point class.')
     print('-----------------------------------------------------------')
-
-
-class Point(object):
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-
-    def __repr__(self):
-        x = self.x
-        y = self.y
-        print('Point(', x, ',', y, ')')
-
 
 
 def run_test_clone():
