@@ -147,10 +147,8 @@ class Point(object):
         self.y = y
 
     def __repr__(self):
-        x = self.x
-        y = self.y
-        point = Point(x, y)
-        print(x, y)
+        print(self.x, self.y)
+
 
 def run_test_repr():
     """
