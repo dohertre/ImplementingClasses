@@ -496,34 +496,6 @@ def run_test_move_by():
         print('*** FAILED: This method should have had no value returned! ***')
 
 
-class Point(object):
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-        self.moves = 0
-
-    def __repr__(self):
-        x1 = str(self.x)
-        y1 = str(self.y)
-
-        return 'Point(' + x1 + ', ' + y1 + ')'
-
-    def clone(self):
-        x2 = self.x
-        y2 = self.y
-        p = Point(x2, y2)
-        return p
-
-    def move_to(self, x, y):
-        self.x = x
-        self.y = y
-
-    def move_by(self, dx, dy):
-        self.x = self.x + dx
-        self.y = self.y + dy
-        self.moves = self.moves + 1
-
-
 def run_test_get_number_of_moves_made():
     """
     Tests the   get_number_of_moves_made   method of the Point class.
@@ -598,6 +570,89 @@ def run_test_get_number_of_moves_made():
     print('-----------------------------------------------------------')
     print('Testing the   get_number_of_moves_made   method.')
     print('-----------------------------------------------------------')
+
+    p1 = Point(10, 8)
+    p2 = Point(50, 20)
+    print()
+    print('Expected for p1 moves made: 0')
+    print('Actual for p1 moves made:  ', p1.get_number_of_moves_made())
+    print('Expected for p2 moves made: 0')
+    print('Actual for p2 moves made:  ', p2.get_number_of_moves_made())
+
+    p1.move_by(5, -1)
+    p2.move_by(0, 0)
+    print()
+    print('Expected for p1 moves made: 1')
+    print('Actual for p1 moves made:  ', p1.get_number_of_moves_made())
+    print('Expected for p2 moves made: 1')
+    print('Actual for p2 moves made:  ', p2.get_number_of_moves_made())
+
+    p2.move_by(200, 0)
+    p2.move_by(-100, 300)
+    p2.move_to(-100, 300)
+    p1.move_to(3, 3)
+    print()
+    print('Expected for p1 moves made: 2')
+    print('Actual for p1 moves made:  ', p1.get_number_of_moves_made())
+    print('Expected for p2 moves made: 4')
+    print('Actual for p2 moves made:  ', p2.get_number_of_moves_made())
+
+    p1.move_by(200, 0)
+    p1.move_by(-100, 300)
+    p1.move_to(-100, 300)
+    p1.move_to(3, 3)
+    print()
+    print('Expected for p1 moves made: 6')
+    print('Actual for p1 moves made:  ', p1.get_number_of_moves_made())
+    print('Expected for p2 moves made: 4')
+    print('Actual for p2 moves made:  ', p2.get_number_of_moves_made())
+
+    p1.x = 400
+    print()
+    print('Expected for p1 moves made: 6')
+    print('Actual for p1 moves made:  ', p1.get_number_of_moves_made())
+    print('Expected for p2 moves made: 4')
+    print('Actual for p2 moves made:  ', p2.get_number_of_moves_made())
+
+    p1.move_to(3, 3)
+    p2.move_by(0, 0)
+    print()
+    print('Expected for p1 moves made: 7')
+    print('Actual for p1 moves made:  ', p1.get_number_of_moves_made())
+    print('Expected for p2 moves made: 5')
+    print('Actual for p2 moves made:  ', p2.get_number_of_moves_made())
+
+
+class Point(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.moves = 0
+
+    def __repr__(self):
+        x1 = str(self.x)
+        y1 = str(self.y)
+
+        return 'Point(' + x1 + ', ' + y1 + ')'
+
+    def clone(self):
+        x2 = self.x
+        y2 = self.y
+        p = Point(x2, y2)
+        return p
+
+    def move_to(self, x, y):
+        self.x = x
+        self.y = y
+        self.moves = self.moves + 1
+
+    def move_by(self, dx, dy):
+        self.x = self.x + dx
+        self.y = self.y + dy
+        self.moves = self.moves + 1
+
+    def get_number_of_moves_made(self):
+        return self.moves
 
 
 def run_test_get_distance_from():
