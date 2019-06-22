@@ -944,7 +944,7 @@ def run_test_closer_to():
         print('Actual:  ', p1.closer_to(p4, p5) is p5)
     """
     # ------------------------------------------------------------------
-    # TODO: 12.  Follow the same instructions as in TO-DO 3 above,
+    # DONE: 12.  Follow the same instructions as in TO-DO 3 above,
     #    but for the  closer_to  method specified above.e
     # ------------------------------------------------------------------
     print()
@@ -979,6 +979,89 @@ def run_test_closer_to():
     print('Actual:  ', p1.closer_to(p4, p5) is p4)
     print('Expected: False')
     print('Actual:  ', p1.closer_to(p4, p5) is p5)
+
+
+
+def run_test_halfway_to():
+    """
+    Tests the   halfway_to   method of the Point class.
+
+    Here is the specification for the   halfway_to   method:
+    What comes in:
+       -- self
+       -- a Point object p2
+    What goes out:
+        Returns a new Point that is halfway between this Point and p2.
+        That is, the x coordinate of the new Point is the average
+        of the x coordinate of this Point and the x coordinate of p2,
+        and likewise for the new Point's y coordinate.
+    Side effects:
+       ** You figure out WHETHER OR NOT side effect(s) MUST happen! **
+
+    EXAMPLE: The following shows   halfway_to   in action.
+    You may also use this example to test this method.
+
+        p1 = Point(10, 20)
+        p2 = Point(30, 100)
+
+        print()
+        print('Should be: Point(20.0, 60.0)')
+        print('Actual is:', p1.halfway_to(p2))
+        print('Should be: Point(20.0, 60.0)')
+        print('Actual is:', p2.halfway_to(p1))
+
+        print()
+        print('Should be: Point(10.0, 20.0)')
+        print('Actual is:', p1.halfway_to(p1))
+
+        p3 = Point(-10, 20)
+        p4 = Point(30, -100)
+
+        print()
+        print('Should be: Point(10.0, -40.0)')
+        print('Actual is:', p3.halfway_to(p4))
+        print('Should be: Point(10.0, -40.0)')
+        print('Actual is:', p3.halfway_to(p4))
+
+        print()
+        print('Should be: Point(-10.0, 20.0)')
+        print('Actual is:', p3.halfway_to(p3))
+
+    """
+    # ------------------------------------------------------------------
+    # DONE: 13.  Follow the same instructions as in TO-DO 3 above,
+    #    but for the  halfway_to  method specified above.
+    # ------------------------------------------------------------------
+    print()
+    print('-----------------------------------------------------------')
+    print('Testing the   halfway_to   method of the Point class.')
+    print('-----------------------------------------------------------')
+
+    p1 = Point(10, 20)
+    p2 = Point(30, 100)
+
+    print()
+    print('Should be: Point(20.0, 60.0)')
+    print('Actual is:', p1.halfway_to(p2))
+    print('Should be: Point(20.0, 60.0)')
+    print('Actual is:', p2.halfway_to(p1))
+
+    print()
+    print('Should be: Point(10.0, 20.0)')
+    print('Actual is:', p1.halfway_to(p1))
+
+    p3 = Point(-10, 20)
+    p4 = Point(30, -100)
+
+    print()
+    print('Should be: Point(10.0, -40.0)')
+    print('Actual is:', p3.halfway_to(p4))
+    print('Should be: Point(10.0, -40.0)')
+    print('Actual is:', p3.halfway_to(p4))
+
+    print()
+    print('Should be: Point(-10.0, 20.0)')
+    print('Actual is:', p3.halfway_to(p3))
 
 
 class Point(object):
@@ -1048,62 +1131,10 @@ class Point(object):
         else:
             return p2
 
-def run_test_halfway_to():
-    """
-    Tests the   halfway_to   method of the Point class.
-
-    Here is the specification for the   halfway_to   method:
-    What comes in:
-       -- self
-       -- a Point object p2
-    What goes out:
-        Returns a new Point that is halfway between this Point and p2.
-        That is, the x coordinate of the new Point is the average
-        of the x coordinate of this Point and the x coordinate of p2,
-        and likewise for the new Point's y coordinate.
-    Side effects:
-       ** You figure out WHETHER OR NOT side effect(s) MUST happen! **
-
-    EXAMPLE: The following shows   halfway_to   in action.
-    You may also use this example to test this method.
-
-        p1 = Point(10, 20)
-        p2 = Point(30, 100)
-
-        print()
-        print('Should be: Point(20.0, 60.0)')
-        print('Actual is:', p1.halfway_to(p2))
-        print('Should be: Point(20.0, 60.0)')
-        print('Actual is:', p2.halfway_to(p1))
-
-        print()
-        print('Should be: Point(10.0, 20.0)')
-        print('Actual is:', p1.halfway_to(p1))
-
-        p3 = Point(-10, 20)
-        p4 = Point(30, -100)
-
-        print()
-        print('Should be: Point(10.0, -40.0)')
-        print('Actual is:', p3.halfway_to(p4))
-        print('Should be: Point(10.0, -40.0)')
-        print('Actual is:', p3.halfway_to(p4))
-
-        print()
-        print('Should be: Point(-10.0, 20.0)')
-        print('Actual is:', p3.halfway_to(p3))
-
-    """
-    # ------------------------------------------------------------------
-    # TODO: 13.  Follow the same instructions as in TO-DO 3 above,
-    #    but for the  halfway_to  method specified above.
-    # ------------------------------------------------------------------
-    print()
-    print('-----------------------------------------------------------')
-    print('Testing the   halfway_to   method of the Point class.')
-    print('-----------------------------------------------------------')
-
-
+    def halfway_to(self, p2):
+        midx = (self.x + p2.x) / 2
+        midy = (self.y + p2.y) / 2
+        return Point(midx, midy)
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
