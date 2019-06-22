@@ -850,7 +850,10 @@ class Point(object):
         dis_x = abs(obj.x - self.x)
         dis_y = abs(obj.y - self.y)
 
-        return ((dis_x ** 2) + (dis_y ** 2)) ** 0.5
+        return ((dis_x ** 2) + (dis_y ** 2)) ** 0.5  # used ^0.5 instead of sqrt
+
+    def get_distance_from_start(self):
+        return ((self.moves ** 2) + (self.moves ** 2)) ** 0.5
 
 
 def run_test_get_distance_traveled():
@@ -905,6 +908,7 @@ def run_test_get_distance_traveled():
     print('Testing the   get_distance_traveled   method')
     print('of the Point class.')
     print('-----------------------------------------------------------')
+
 
 
 def run_test_closer_to():
